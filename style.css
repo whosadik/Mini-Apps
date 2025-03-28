@@ -27,6 +27,7 @@ body {
   justify-self: center;
   align-self: center;
   margin: 2rem;
+  text-align: center;
 }
 
 .container {
@@ -241,6 +242,7 @@ h2 {
   body {
     place-items: center;
     height: 100vh;
+    display: grid;
   }
   .container {
     width: 900px;
