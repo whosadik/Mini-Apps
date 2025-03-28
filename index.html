@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="logo"><img src="images/logo.svg" alt="Splitter logo"></div>
+    <div class="container">
+      <div class="bill">
+        <h2>Bill</h2>
+        <img src="images/icon-dollar.svg" class="icon-dollar" />
+
+        <input type="number" class="bill-input" id="bill-input" />
+      </div>
+
+      <div class="select-tip">
+        <h2>Select Tip %</h2>
+        <div class="buttons" id="buttons">
+          <button class="five" id="frst" onclick="calculateTip(0.05)">5%</button>
+          <button class="five" id="scnd" onclick="calculateTip(0.1)">10%</button>
+          <button class="five" id="thrd" onclick="calculateTip(0.15)">15%</button>
+          <button class="five" id="frth" onclick="calculateTip(0.25)">25%</button>
+          <button class="five" id="ffth" onclick="calculateTip(0.5)">50%</button>
+          <input type="number" placeholder="Custom" class="custom" id="tip-custom"/>
+        </div>
+      </div>
+
+      <div class="bill" id="billl">
+        <h2>Number of people</h2>
+        <img src="images/icon-person.svg" class="icon-person" />
+        <input
+          type="number"
+          placeholder="0"
+          class="amount-input"
+          id="amount-input"
+        />
+      </div>
+
+      <div class="final">
+        <div class="tip-amount">
+          <h2>Tip Amount</h2>
+          <p class="person">/ person</p>
+        </div>
+
+        <div class="tipcost">
+          <p id="tipcost-text">$0.00</p>
+        </div>
+
+        <div class="total">
+          <h2>Total</h2>
+          <p class="person">/ person</p>
+        </div>
+
+        <div class="totalcost">
+          <p id="totalcost-text">$0.00</p>
+        </div>
+
+        <button type="reset" class="reset" onclick="resetAll()">reset</button>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
