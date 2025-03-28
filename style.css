@@ -238,6 +238,10 @@ h2 {
 }
 
 @media (min-width: 898px) {
+  body {
+    place-items: center;
+    height: 100vh;
+  }
   .container {
     width: 900px;
     height: 500px;
