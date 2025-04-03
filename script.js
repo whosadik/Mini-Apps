@@ -11,28 +11,29 @@ function calculateAge() {
   let yearResult = document.getElementById("year-result");
   let monthResult = document.getElementById("month-result");
   let dayResult = document.getElementById("day-result");
-  let today = new Date();
-  let birthDate = new Date(year, month - 1, day);
-  let ageYears = today.getFullYear() - birthDate.getFullYear();
-  let ageMonths = today.getMonth() - birthDate.getMonth();
-  let ageDays = today.getDate() - birthDate.getDate();
+
+  if (typeof moment === "undefined") {
+    alert("Библиотека moment.js не подключена.");
+    return;
+  }
+
+  let birthDate = moment(`${year}-${month}-${day}`, "YYYY-MM-DD");
+
+  let today = moment();
+
   let flag = true;
-  requiredErrorDay.classList.add("hidden");
-  requiredErrorMonth.classList.add("hidden");
-  requiredErrorYear.classList.add("hidden");
-  invDay.classList.add("hidden");
-  invMonth.classList.add("hidden");
-  invYear.classList.add("hidden");
 
   if (!day) {
     requiredErrorDay.classList.add("error");
     flag = false;
-  } else if (day < 1 || day > new Date(year, month, 0).getDate()) {
+  } else if (
+    day < 1 ||
+    day > moment(`${year}-${month}`, "YYYY-MM").daysInMonth()
+  ) {
     invDay.classList.add("error");
     flag = false;
   } else {
     invDay.classList.remove("error");
-    flag = true;
   }
 
   if (!month) {
@@ -43,38 +44,25 @@ function calculateAge() {
     flag = false;
   } else {
     invMonth.classList.remove("error");
-    flag = true;
   }
 
   if (!year) {
     requiredErrorYear.classList.add("error");
     flag = false;
-  } else if (year < 1900 || year > new Date().getFullYear()) {
+  } else if (year < 1900 || year > today.year()) {
     invYear.classList.add("error");
     flag = false;
   } else {
     invYear.classList.remove("error");
-    flag = true;
-  }
-  if (day && month && year) {
-    requiredErrorDay.classList.remove("error");
-    requiredErrorMonth.classList.remove("error");
-    requiredErrorYear.classList.remove("error");
   }
 
-  if (flag == true) {
-    if (ageMonths < 0) {
-      ageYears--;
-      ageMonths += 12;
-    }
-
-    if (ageDays < 0) {
-      let prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-      let prevMonthDays = prevMonth.getDate();
-
-      ageDays += prevMonthDays;
-      ageMonths--;
-    }
+  if (flag) {
+    let ageYears = today.diff(birthDate, "years");
+    let ageMonths = today.diff(birthDate, "months") % 12;
+    let ageDays = today.diff(
+      birthDate.add(ageYears, "years").add(ageMonths, "months"),
+      "days"
+    );
 
     yearResult.textContent = ageYears;
     monthResult.textContent = ageMonths;
