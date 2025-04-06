@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="congrats.css" />
+  </head>
+  <body>
+    <div class="line-top"></div>
+
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo-full.svg" alt="Coding Conf Logo" />
+      </div>
+      <div class="heading">
+        <h1 class="heading-h">
+          Congrats, <span id="span-name"></span>! Your ticket is ready.
+        </h1>
+        <p class="under-heading">
+          We've emailed your ticket to <span id="span-email"></span> and will
+          send updates in the run up to the event.
+        </p>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-main">
+          <img
+            class="logo-ticket"
+            src="assets/images/logo-mark.svg"
+            alt="Logo mark"
+          />
+          <div class="ticket-text">
+            <h2>Coding Conf</h2>
+            <p>Jan 31, 2025 / Astana, KZ</p>
+          </div>
+        </div>
+
+        <div class="ticket-user">
+          <div class="ticket-avatar">
+            <img id="ticket-avatar" src="" alt="Avatar" />
+          </div>
+
+          <div class="user-info">
+            <span id="username"></span>
+            <div class="gitHub">
+              <img src="assets/images/icon-github.svg" alt="GitHub icon" />
+              <div id="userGit"></div>
+            </div>
+          </div>
+        </div>
+
+        <span id="ticket-n"></span>
+      </div>
+    </div>
+
+    <div class="line-bottom"></div>
+    <script>
+      const savedAvatar = localStorage.getItem("avatar");
+      const avatarEl = document.getElementById("ticket-avatar");
+
+      if (savedAvatar && avatarEl) {
+        avatarEl.src = savedAvatar;
+      }
+      window.addEventListener("DOMContentLoaded", function () {
+        const name = localStorage.getItem("name");
+        const email = localStorage.getItem("email");
+        const git = localStorage.getItem("git");
+        const ticketNumber = localStorage.getItem("ticketNumber");
+
+        document.getElementById("span-name").textContent = name;
+        document.getElementById("span-email").textContent = email;
+
+        if (name && git) {
+          document.getElementById("username").textContent = name;
+          document.getElementById("userGit").textContent = git;
+          document.getElementById("ticket-n").textContent = ticketNumber;
+        } else {
+          console.log("No user data found in localStorage");
+        }
+      });
+    </script>
+  </body>
+</html>

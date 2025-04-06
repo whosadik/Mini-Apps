@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Conference ticket generator</title>
+  </head>
+  <body>
+    <!-- Form starts -->
+    <div class="line-top"></div>
+
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo-full.svg" alt="Coding Conf Logo" />
+      </div>
+
+      <div class="heading">
+        <h1 class="heading-h">Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p class="under-heading">
+          Secure your spot at next year's biggest coding conference.
+        </p>
+      </div>
+
+      <div class="drag-drop">
+        <label class="upload-label">Upload Avatar</label>
+
+        <label class="upload-box" for="fileElem" id="drop-area">
+          <div class="upload-icon">
+            <img
+              id="preview"
+              src="assets/images/icon-upload.svg"
+              alt="Upload Image Icon"
+            />
+          </div>
+          <div class="button-row" id="buttons">
+            <button id="removeBtn">Remove image</button>
+            <button id="changeBtn">Change image</button>
+          </div>
+          <div class="upload-text" id="placeholder">
+            Drag and drop or click to upload
+          </div>
+          <input type="file" id="fileElem" accept="image/png, image/jpeg" />
+        </label>
+        <div class="upload-info">
+          <img src="assets/images/icon-info.svg" />
+          <p>Upload your photo (JPG or PNG, max size: 500KB)</p>
+        </div>
+      </div>
+
+      <form action="" class="form" id="ticket-form">
+        <div id="input-name" class="inputs">
+          <label class="form-label" for="name">Full Name</label>
+          <input
+            class="form-input"
+            type="text"
+            id="name"
+            placeholder="Stephen King"
+          />
+          <div id="required-error-name" class="hidden">
+            This field is required
+          </div>
+        </div>
+
+        <div id="input-email" class="inputs">
+          <label class="form-label" for="email">Email Address</label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            placeholder="example@email.com"
+          />
+          <div id="required-error-email" class="hidden">
+            This field is required
+          </div>
+        </div>
+
+        <div id="input-github" class="inputs">
+          <label class="form-label" for="github">GitHub Username</label>
+          <input
+            class="form-input"
+            type="text"
+            id="github"
+            placeholder="@yourusername"
+          />
+          <div id="required-error-git" class="hidden">
+            This field is required
+          </div>
+        </div>
+
+        <button class="btn" id="btn" type="submit">Generate My Ticket</button>
+      </form>
+    </div>
+
+    <div class="line-bottom"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
