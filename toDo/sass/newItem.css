@@ -1,0 +1,20 @@
+.newItemEntry {
+  position: sticky;
+  top: 0;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+}
+.newItemEntry form {
+  display: flex;
+  justify-content: space-between;
+}
+.newItemEntry label {
+  position: absolute;
+  left: -100000px;
+}
+.newItemEntry input[type=text] {
+  width: 80%;
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  outline: none;
+}/*# sourceMappingURL=newItem.css.map */
