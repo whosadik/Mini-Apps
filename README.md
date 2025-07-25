@@ -8,14 +8,16 @@ This repository contains a collection of small, self-contained frontend applicat
 
 | App Name                       | Description                                         | Live Demo |
 |-------------------------------|-----------------------------------------------------|-----------|
-| `AgeCalculator`               | Calculate age from birth date input                |  [🔗 Live](https://whosadik.github.io/AgeCalculator/)|
+| `AgeCalculator`               | Calculate age from birth date input                | [🔗 Live](https://whosadik.github.io/AgeCalculator/) |
+| `AdviceGeneratorApp`          | Generate random advice using Advice Slip API        | [🔗 Live](https://whosadik.github.io/AdviceGeneratorApp/) |
 | `Browser-Extansion-App`       | Save and manage browser tabs like a mini bookmark tool | [🔗 Live](https://whosadik.github.io/Browser-Extansion-App/) |
 | `Conference-Ticket-Generator` | Generate printable conference tickets with user info | [🔗 Live](https://whosadik.github.io/Conference-Ticket-Generator/) |
 | `MovieCatalogApp`             | Static movie catalog layout with posters and genres | [🔗 Live](https://whosadik.github.io/MovieCatalogApp/) |
 | `Social-Media-Dashboard`      | Responsive dashboard with stats and theme toggle    | [🔗 Live](https://whosadik.github.io/Social-Media-Dashboard/) |
-| `TipCalculator`               | Calculate tips based on bill and percentage         |[  [🔗 Live](https://whosadik.github.io/TipCalculator/)|
+| `TipCalculator`               | Calculate tips based on bill and percentage         | [🔗 Live](https://whosadik.github.io/TipCalculator/) |
 | `extention`                   | Minimal Chrome extension template                   | *Manual install* |
 | `toDo`                        | Simple to-do list with task input and removal       | *Coming soon* |
+
 
 ---
 
