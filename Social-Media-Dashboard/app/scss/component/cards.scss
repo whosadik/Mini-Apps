@@ -1,0 +1,127 @@
+@use '../util/' as *;
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(30);
+
+    @include breakpoint(medium){
+        grid-template-columns: repeat(2, 1fr);
+    } 
+
+    @include breakpoint(large){
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card{
+    background: var(--card-bg);
+    color: var(--dark-text1);
+    text-align: center;
+    padding: rem(25);
+    border-radius: rem(5);
+    transition: background 150ms ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        background: var(--card-hover);
+    }
+
+    &__subtitle{
+        font-size: rem(14);
+        font-weight: 700;
+    }
+    &--facebook{
+        border-top: rem(5) solid var(--facebook);
+    }
+    &--twitter{
+        border-top: rem(5) solid var(--twitter);
+    }
+    &--instagram {
+        position: relative;
+        display: inline-block;
+        padding-top: rem(30);
+    }
+    
+    &--instagram::before {
+        border-top-left-radius: rem(5);
+        border-top-right-radius: rem(5);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(to right, var(--instagram-start), var(--instagram-middle), var(--instagram-end));
+        z-index: 1;
+    }
+    
+    &--youtube{
+        border-top: rem(5) solid var(--youtube);
+    }
+
+    &__platform{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: rem(28);
+        height: rem(20);
+    }
+
+    &__icon{
+        margin-right: rem(8);
+    }
+
+    &__username{
+        font-size: rem(12);
+        font-weight: bold;
+    }
+
+    &__followers{
+        margin-bottom: rem(25);
+    }
+
+    &__count{
+        color: var(--text-color);
+        font-weight: bold;
+        letter-spacing: rem(-2);
+        line-height: 1;
+        margin-bottom: rem(4);
+        &--big{
+            font-size: rem(56);
+        }
+
+        &--small{
+            font-size: rem(32);
+        }
+    }
+
+    &__label{
+        color: var(--dark-text1);
+        font-size: rem(12);
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: rem(5 );
+    }
+
+    &__change{
+        font-size: rem(12);
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--up{
+            @extend .card__change;
+            color: var(--limegreen);
+        }
+
+        &--down{
+            @extend .card__change;
+            color: var(--brightred);
+        }
+
+        img {
+            margin-right: rem(4);
+        }
+    }
+}
