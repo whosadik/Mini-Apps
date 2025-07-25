@@ -1,0 +1,104 @@
+:root{ 
+    --Neutral-900: hsl(227, 75%, 14%);
+    --Neutral-800: hsl(226, 25%, 17%);
+    --Neutral-700: hsl(225, 23%, 24%);
+    --Neutral-600: hsl(226, 11%, 37%);
+    --Neutral-300: hsl(0, 0%, 78%);
+    --Neutral-200: hsl(217, 61%, 90%);
+    --Neutral-100: hsl(0, 0%, 93%);
+    --Neutral-0: hsl(200, 60%, 99%);
+    
+    --Red-400: hsl(3, 86%, 64%);
+    --Red-500: hsl(3, 71%, 56%);
+    --Red-700: hsl(3, 77%, 44%);
+    
+    
+    --Light-Gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards-heading{
+    color: var(--Neutral-800);
+    font-weight: 700;
+}
+
+body.dark .cards-heading{
+    color: var(--Neutral-0);
+}
+
+.filters{
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-btn{
+    width: auto;
+    height: 2.5rem;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--Neutral-0);
+    padding: 1rem 1.25rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--Neutral-900);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark .filter-btn{
+    background-color: var(--Neutral-800);
+    color: var(--Neutral-100);
+    font-weight: 500;
+}
+
+.filter-btn:focus{
+    background-color: var(--Red-500);
+    color: var(--Neutral-0);
+}
+
+.filter-btn:hover{
+    cursor: pointer;
+
+}
+
+body.dark .filter-btn:focus{
+    background-color: var(--Red-500);
+    color: var(--Neutral-800);
+}
+
+@media (min-width:696px){
+    .filter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cards-heading{
+        font-size: 38px;
+    }
+
+    .filter-btn{
+        height: 3.5rem;
+        font-size: 20px;
+        padding: 1rem 1.5rem;
+    }
+
+    .filter-btn:focus{
+        border: 2px solid var(--Neutral-900);
+        box-shadow: 0 0 0 2px var(--Red-500);
+    }
+
+    body.dark .filter-btn:hover{
+        background-color: var(--Neutral-600);
+        cursor: pointer;
+    }
+}
