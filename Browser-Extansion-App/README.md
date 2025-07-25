@@ -24,7 +24,5 @@ This is a simple and functional browser extension app that allows users to save,
 - CSS3  
 - JavaScript (DOM manipulation, `localStorage`)  
 
----
 
-## 📦 Folder Structure
 
