@@ -1,7 +1,7 @@
 # Frontend Mentor - Conference ticket generator
 
 ![Design preview for the Conference ticket generator coding challenge](./preview.jpg)
-
+https://whosadik.github.io/Conference-Ticket-Generator/
 # Conference Ticket Generator
 
 ## Description
