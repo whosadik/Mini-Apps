@@ -1,6 +1,7 @@
 # Frontend Mentor - Age calculator app
 
 ![Design preview for the Age calculator app coding challenge](preview.jpg)
+https://whosadik.github.io/AgeCalculator/
 
 ## Welcome! 👋
 
