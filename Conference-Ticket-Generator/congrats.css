@@ -1,0 +1,551 @@
+:root {
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+
+  --Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+* {
+  font-family: "Inconsolata", monospace;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  padding: 2rem 1rem;
+  justify-content: center;
+  align-items: center;
+  background-image:
+    url(assets/images/pattern-lines.svg),
+    url("assets/images/background-mobile.png");
+  background-color: var(--Neutral-900);
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    center center,
+    center center;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+}
+
+.line-top {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: 10rem;
+  height: 5rem;
+
+  background-image: url(assets/images/pattern-squiggly-line-top.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.line-bottom {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: 20rem;
+  height: 10rem;
+  z-index: -1;
+
+  background-image: url(assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  gap: 2rem;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  top: 0;
+  left: 0;
+}
+
+.logo img {
+  width: 12rem;
+}
+
+.heading-h {
+  color: var(--Neutral-0);
+  text-align: center;
+  width: 100%;
+  font-size: 1.85rem;
+}
+
+.under-heading {
+  color: var(--Neutral-300);
+  text-align: center;
+  width: 100%;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.upload-label {
+  color: var(--Neutral-0);
+  width: 100%;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.upload-box {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  height: 10rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 2px dashed var(--Neutral-500);
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: hsl(245, 19%, 35%, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.upload-icon {
+  margin-top: 1rem;
+}
+
+.upload-icon img {
+  background-color: hsl(245, 19%, 35%, 0.3);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 15px;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.upload-text {
+  color: var(--Neutral-300);
+  text-align: center;
+  width: 100%;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+.upload-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.upload-info p {
+  color: var(--Neutral-500);
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+  margin-left: -0.5rem;
+}
+
+.upload-info img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.inputs {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: hsl(245, 19%, 35%, 0.3);
+  transition: all 0.3s ease-in-out;
+  padding: 0 1rem;
+  border: 2px solid var(--Neutral-500);
+  color: var(--Neutral-0);
+  font-size: 1rem;
+}
+
+.form-input::placeholder {
+  color: var(--Neutral-300);
+  font-size: 1rem;
+}
+.form-input:focus {
+  outline: none;
+  background-color: hsl(245, 19%, 35%, 0.3);
+}
+
+.form-label {
+  color: var(--Neutral-0);
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  display: none;
+}
+
+.button-row button {
+  background-color: #2a284e;
+  color: #ccc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  width: 100%;
+  max-width: 600px;
+  height: 3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--Orange-500);
+  transition: all 0.3s ease-in-out;
+}
+
+.ticket {
+  background-image: url(assets/images/pattern-ticket.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  height: 12rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  color: var(--Neutral-0);
+  text-align: left;
+}
+
+.logo-ticket {
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.ticket-main {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.gitHub img {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+#username {
+  color: var(--Neutral-0);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#userGit {
+  color: var(--Neutral-300);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+#span-name {
+  background: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+#span-email {
+  color: var(--Orange-500);
+}
+
+.gitHub {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  gap: 0.2rem;
+}
+
+.ticket-text {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-left: 0.5rem;
+  gap: 0.5rem;
+}
+
+.ticket-text h2 {
+  color: var(--Neutral-0);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.ticket-text p {
+  color: var(--Neutral-300);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.ticket-avatar img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ticket-user {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  gap: 0.1rem;
+  margin-left: 0.5rem;
+}
+
+.user-info {
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  gap: 0.2rem;
+}
+
+#ticket-n {
+  position: absolute;
+  rotate: 90deg;
+
+  top: 40%;
+  right: -5px;
+  color: var(--Neutral-300);
+  font-size: 1.5rem;
+}
+
+@media (min-width: 546px) {
+  body {
+    background-image:
+      url(assets/images/pattern-lines.svg),
+      url("assets/images/background-desktop.png");
+    background-color: var(--Neutral-900);
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      center center,
+      center center;
+    background-size: cover, cover;
+    background-attachment: fixed, fixed;
+  }
+  .line-bottom {
+    background-image: url(assets/images/pattern-squiggly-line-bottom-desktop.svg);
+    width: 30rem;
+    height: 20rem;
+    left: -10px;
+  }
+  .line-top {
+    background-image: url(assets/images/pattern-squiggly-line-top.svg);
+    width: 20rem;
+    height: 10rem;
+    top: 5rem;
+    right: 0;
+  }
+  .logo img {
+    width: 15rem;
+  }
+  .heading-h {
+    font-size: 2.5rem;
+  }
+  .heading {
+    max-width: 700px;
+  }
+
+  .under-heading {
+    font-size: 1.3rem;
+  }
+
+  .line-bottom {
+    width: 30rem;
+    height: 20rem;
+  }
+  .line-top {
+    width: 20rem;
+    height: 10rem;
+  }
+  .ticket {
+    width: 100%;
+    max-width: 500px;
+    height: 15rem;
+  }
+
+  .ticket-text h2 {
+    font-size: 2rem;
+  }
+
+  .ticket-text p {
+    font-size: 1rem;
+  }
+  .ticket-user {
+    gap: 0.5rem;
+  }
+  .ticket-avatar img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .logo-ticket {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  #username {
+    font-size: 1.5rem;
+  }
+  #userGit {
+    font-size: 1rem;
+  }
+  #span-email {
+    font-size: 1.3rem;
+  }
+  #span-name {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 444px) {
+  .upload-box {
+    width: 100%;
+    max-width: 600px;
+    height: 10rem;
+  }
+  .upload-icon img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .upload-text {
+    font-size: 1.5rem;
+  }
+  .upload-info p {
+    font-size: 1rem;
+  }
+  .upload-info img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .form-input {
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+  .form-label {
+    font-size: 1.5rem;
+  }
+  .btn {
+    font-size: 1.5rem;
+    height: 4rem;
+  }
+  .ticket {
+    height: 15rem;
+  }
+  .ticket-text h2 {
+    font-size: 2rem;
+  }
+  .ticket-text p {
+    font-size: 1rem;
+  }
+  .ticket-user {
+    gap: 0.5rem;
+  }
+  .ticket-avatar img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .logo-ticket {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  #username {
+    font-size: 1.5rem;
+  }
+
+  #userGit {
+    font-size: 1rem;
+  }
+  .gitHub img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  #span-name {
+    font-size: 2.5rem;
+  }
+  #span-email {
+    font-size: 1.3rem;
+  }
+}
